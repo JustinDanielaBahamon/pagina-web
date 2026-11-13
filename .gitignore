@@ -1,0 +1,26 @@
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Environment variables (never commit secrets)
+.env
+.env.*
+!.env.example
+
+# Legacy project: files that must not be published
+# Installers (too large for GitHub, not part of the source code)
+/legacy/PROGRAMAS/
+# Academic document with personal names
+/legacy/MANUAL TECNICO/
+# Original database dumps with personal data and plain-text passwords
+# (a sanitized copy lives in legacy/bd/hamaca_mb.sanitized.sql)
+/legacy/bd/hamaca_mb.sql
+/legacy/bd/hamaca_mb.sql 2.sql
+/legacy/hamaca/bd/hamaca_mb.sql
+# Personal photos and third-party images
+/legacy/archivos/Imagen de WhatsApp*
+/legacy/img/fotoN.png
+/legacy/img/**/IMG-*-WA*.jpg

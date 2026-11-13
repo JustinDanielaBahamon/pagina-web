@@ -1,0 +1,220 @@
+*/lider pequeño/HAMACA
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+.navbar .navbar-brand, .navbar-nav .nav-link {
+    color: rgb(0, 0, 0) !important; /* Cambia el color del texto de los enlaces */
+  }
+.container {
+    width: 90%;
+    max-width: 1200px;
+}
+
+.slider-container {
+    width: 100%;
+}
+
+.main-image {
+    width: 100%;
+    text-align: center;
+}
+
+.main-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+}
+
+.thumbnail-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.thumbnail {
+    width: 23%;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+}
+
+ /*estilo del carrusel pequeño*/
+  
+ .product-carousel {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+  }
+  
+  .product-carousel-inner {
+    display: flex;
+  }
+  
+  .product-carousel-item {
+    flex: 0 0 auto;
+    width: 18.5%; /* Ajusta el porcentaje según el número de elementos */
+    margin: 0 0.5rem;
+    box-sizing: border-box;
+  }
+  
+  .product-carousel-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .product-info {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  
+  .product-name, .product-price {
+    margin: 0;
+  
+  }
+
+  
+/* resposive */
+
+/* Diseño básico para dispositivos grandes */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  flex: 1 1 25%; /* Ajusta el ancho de los elementos según el espacio disponible */
+  padding: 10px;
+}
+
+/* Ajustes para dispositivos medianos */
+@media (max-width: 768px) {
+  .item {
+      flex: 1 1 50%;
+  }
+}
+
+/* Ajustes para dispositivos pequeños */
+@media (max-width: 480px) {
+  .item {
+      flex: 1 1 100%;
+  }
+}
+/* styles.css */
+
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  padding: 20px;
+}
+
+.header, .footer {
+  text-align: center;
+}
+
+.sidebar {
+  display: none; /* Oculta la barra lateral en pantallas pequeñas */
+}
+
+/* Medias queries */
+@media (min-width: 768px) {
+  .sidebar {
+      display: block;
+      float: left;
+      width: 25%;
+  }
+
+  .main-content {
+      width: 75%;
+      float: left;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+      display: none;
+  }
+
+  .main-content {
+      width: 100%;
+  }
+}
+/* styles.css */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilos generales */
+.carrusel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carrusel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carrusel-item {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  /* Ajusta estos estilos según el diseño */
+}
+
+/* Botones de navegación */
+.carrusel-prev, .carrusel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.carrusel-prev {
+  left: 10px;
+}
+
+.carrusel-next {
+  right: 10px;
+}
+
+/* Medias queries para ajustar el carrusel en pantallas más pequeñas */
+@media (max-width: 768px) {
+  .carrusel-item {
+      flex: 0 0 80%; /* Ajusta el tamaño según sea necesario */
+  }
+}
+
+@media (max-width: 480px) {
+  .carrusel-item {
+      flex: 0 0 100%;
+  }
+}
+
