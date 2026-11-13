@@ -1,0 +1,302 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    position: relative;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 16.66%;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
+  /*estilo del carrusel pequeño*/
+  
+  .product-carousel {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+  }
+  
+  .product-carousel-inner {
+    display: flex;
+  }
+  
+  .product-carousel-item {
+    flex: 0 0 auto;
+    width: 25.1%; /* Ajusta el porcentaje según el número de elementos */
+    margin: 0 0.5rem;
+    box-sizing: border-box;
+  }
+  
+  .product-carousel-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .product-info {
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+  
+  .product-name, .product-price {
+    margin: 0;
+  
+  }
+  
+  /*kk*/
+
+ 
+
+
+.btn-primary:hover {
+  background-color: #0ac9f8;
+  transform: translateY(-2px); /* Efecto de elevación al pasar el cursor */
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333; /* Texto en gris oscuro para mejor contraste */
+}
+
+h1, h2, h5 {
+  font-weight: 600;
+  color: #0b0c0c; /* Título con el color primario */
+}
+.carousel-inner img {
+  border-radius: 15px; /* Esquinas redondeadas */
+  box-shadow: 0 8px 16px rgba(0, 247, 255, 0.918); /* Sombra */
+}
+
+.carousel-caption {
+  background-color: rgba(8, 8, 8, 0.8); /* Fondo semi-transparente con un color más vivo */
+  padding: 20px;
+  border-radius: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Añade profundidad al texto */
+}
+
+.navbar .navbar-brand, .navbar-nav .nav-link {
+  color: rgb(5, 5, 5) !important; /* Cambia el color del texto de los enlaces */
+}
+
+ /*boton de compra*/
+
+ .btn-add-to-cart {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #0c0b0b;
+  background-color: #afffe4; /* Color verde para el botón */
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s;
+  margin-top: 10px; /* Espacio adicional arriba del botón */
+}
+
+.btn-add-to-cart:hover {
+  background-color: #dd86ff; /* Color verde más oscuro para el hover */
+}
+
+/* resposive */
+
+/* Diseño básico para dispositivos grandes */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  flex: 1 1 25%; /* Ajusta el ancho de los elementos según el espacio disponible */
+  padding: 10px;
+}
+
+/* Ajustes para dispositivos medianos */
+@media (max-width: 768px) {
+  .item {
+      flex: 1 1 50%;
+  }
+}
+
+/* Ajustes para dispositivos pequeños */
+@media (max-width: 480px) {
+  .item {
+      flex: 1 1 100%;
+  }
+}
+/* styles.css */
+
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  padding: 20px;
+}
+
+.header, .footer {
+  text-align: center;
+}
+
+.sidebar {
+  display: none; /* Oculta la barra lateral en pantallas pequeñas */
+}
+
+/* Medias queries */
+@media (min-width: 768px) {
+  .sidebar {
+      display: block;
+      float: left;
+      width: 25%;
+  }
+
+  .main-content {
+      width: 75%;
+      float: left;
+  }
+}
+
+@media (max-width: 767px) {
+  .sidebar {
+      display: none;
+  }
+
+  .main-content {
+      width: 100%;
+  }
+}
+/* styles.css */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+/* Estilos generales */
+.carrusel {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carrusel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carrusel-item {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  /* Ajusta estos estilos según el diseño */
+}
+
+/* Botones de navegación */
+.carrusel-prev, .carrusel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.carrusel-prev {
+  left: 10px;
+}
+
+.carrusel-next {
+  right: 10px;
+}
+
+/* Medias queries para ajustar el carrusel en pantallas más pequeñas */
+@media (max-width: 768px) {
+  .carrusel-item {
+      flex: 0 0 80%; /* Ajusta el tamaño según sea necesario */
+  }
+}
+
+@media (max-width: 480px) {
+  .carrusel-item {
+      flex: 0 0 100%;
+  }
+}
+
