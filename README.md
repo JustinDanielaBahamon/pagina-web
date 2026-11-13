@@ -36,6 +36,8 @@ El objetivo es convertir aquel sitio en PHP tradicional en una base profesional 
 - [Índice de la documentación](docs/README.md)
 - [Auditoría inicial del proyecto](docs/initial-audit.md)
 - [Flujo de trabajo con Git](docs/git-workflow.md)
+- [Design system](docs/design-system.md)
+- [Estructura de páginas](docs/page-structure.md)
 
 ## Convenciones
 
