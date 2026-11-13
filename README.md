@@ -6,7 +6,9 @@ El objetivo es convertir aquel sitio en PHP tradicional en una base profesional 
 
 ## Estado actual
 
-**Fase 0 — preparación del repositorio.** Por ahora solo está el proyecto original, guardado como referencia en [`legacy/`](legacy/README.md). La nueva aplicación aún no existe.
+**Fase 2 — backend.** Ya están el design system ([Fase 1](docs/design-system.md)) y el proyecto Laravel base con MySQL en Docker. El proyecto original se conserva como referencia en [`legacy/`](legacy/README.md).
+
+Para levantar el entorno, sigue la [guía de instalación](docs/installation.md).
 
 ## Stack objetivo
 
@@ -21,10 +23,11 @@ El objetivo es convertir aquel sitio en PHP tradicional en una base profesional 
 
 ```
 /
-├── backend/     API en Laravel (se crea en la Fase 2)
+├── backend/     API REST en Laravel
 ├── frontend/    Aplicación Angular: tienda y panel admin (se crea en la Fase 3)
 ├── docs/        Documentación del proyecto, en español
 ├── legacy/      Proyecto original, solo como referencia (temporal)
+├── compose.yaml Servicios de desarrollo (MySQL 8.4 en Docker)
 ├── .editorconfig
 ├── .gitattributes
 ├── .gitignore
@@ -34,6 +37,7 @@ El objetivo es convertir aquel sitio en PHP tradicional en una base profesional 
 ## Documentación
 
 - [Índice de la documentación](docs/README.md)
+- [Instalación del entorno](docs/installation.md)
 - [Auditoría inicial del proyecto](docs/initial-audit.md)
 - [Flujo de trabajo con Git](docs/git-workflow.md)
 - [Design system](docs/design-system.md)
