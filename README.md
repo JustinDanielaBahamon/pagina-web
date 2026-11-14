@@ -40,6 +40,7 @@ Para levantar el entorno, sigue la [guía de instalación](docs/installation.md)
 - [Instalación del entorno](docs/installation.md)
 - [Auditoría inicial del proyecto](docs/initial-audit.md)
 - [Flujo de trabajo con Git](docs/git-workflow.md)
+- [Modelo de datos](docs/data-model.md)
 - [Design system](docs/design-system.md)
 - [Estructura de páginas](docs/page-structure.md)
 
