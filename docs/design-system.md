@@ -150,7 +150,7 @@ Las sombras usan el tono `ink-900` en lugar de negro puro para mantener la calid
 
 - Contenedor máximo de 1200 px, centrado.
 - Margen lateral de 16 px en móvil, 24 px en tableta y 32 px en escritorio.
-- Las imágenes de producto van en proporción **4:5**, en formato WebP y con carga diferida (`loading="lazy"`).
+- El marco de las imágenes de producto tiene proporción **4:5**. La foto se muestra **completa** dentro del marco (`object-fit: contain`) sobre fondo `beige-200`, sin recortarla: las hamacas son muy anchas y un recorte les cortaría los extremos. Formato WebP y carga diferida (`loading="lazy"`).
 
 ## 7. Movimiento
 
@@ -183,7 +183,7 @@ Alto mínimo: 44 px en táctil y 40 px en escritorio.
 - La validación ocurre al salir del campo y al enviar, no con cada tecla.
 
 ### Tarjeta de producto
-- Imagen 4:5 con fondo `beige-200` mientras carga.
+- Marco 4:5 con fondo `beige-200`; la foto se ve completa, sin recortar.
 - Categoría en mayúsculas, `terracotta-600`, 12 px.
 - Nombre en Playfair Display, 16–18 px, máximo 2 líneas.
 - Precio en Inter 500 con formato colombiano: `$350.000`.
@@ -224,10 +224,11 @@ Fondo blanco, filas de 48 px, separadores en `beige-300`, encabezado en `ink-600
 
 ## 10. Fotografía
 
-- Formato 4:5 para productos y 16:9 para las bandas de inicio.
+- Las fotos de producto se guardan con su proporción original y se muestran en un marco 4:5. Las bandas del inicio usan 16:9.
+- En la galería de cada color va primero la foto con fondo limpio y después las fotos en la tienda.
 - Fondo neutro y luz natural. Evitar fondos recargados que compitan con el producto.
 - Varias fotos por producto: vista completa, detalle del tejido, producto en uso.
-- Exportar en WebP a 1200 px de ancho como máximo.
+- Exportar en WebP con 1600 px como máximo en el lado más largo y calidad 80.
 - No usar imágenes de otras marcas. El diagrama de medidas actual (`legacy/img/Medidas.png`) se rehará como ilustración propia.
 
 ## 11. Implementación y reutilización

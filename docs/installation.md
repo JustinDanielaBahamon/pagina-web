@@ -69,12 +69,14 @@ cd backend
 composer install
 cp .env.example .env
 php artisan key:generate
+php artisan storage:link
 php artisan migrate --seed
 ```
 
 - `composer install` descarga las dependencias en `vendor/`. Esa carpeta no se sube al repositorio.
 - `.env` guarda la configuración local: conexión a la base, clave de la aplicación, etc. **Nunca se sube.** `.env.example` es la plantilla que sí se versiona.
 - `key:generate` crea la clave con la que Laravel cifra sesiones y cookies.
+- `storage:link` crea el enlace `public/storage`, por donde se sirven las fotos de los productos.
 - `migrate --seed` crea las tablas en MySQL y carga el catálogo de demostración (ver [data-model.md](data-model.md)).
 
 Para levantar el servidor de desarrollo:

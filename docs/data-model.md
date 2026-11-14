@@ -59,18 +59,23 @@ categories ─┐ (subcategorías: parent_id)
 
 ## Catálogo de demostración
 
-`Database\Seeders\CatalogSeeder` carga las 6 categorías y 7 productos del sitio original, con 30 variantes por color:
+`Database\Seeders\CatalogSeeder` carga las 6 categorías y 9 productos del sitio original, con **80 variantes** y **145 fotos**.
 
-| Producto | Variantes | Precio |
-|---|---|---|
-| Hamaca con palo | 8 colores | $350.000 |
-| Hamaca clásica | 5 colores | $350.000 |
-| Silla colgante | 9 colores | $300.000 (rayada y colombiana: $350.000) |
-| Columpio | 4 colores | $350.000 |
-| Cuna colgante | 1 | $250.000 |
-| Bolso tejido | 2 colores | $60.000 |
-| Poncho | 1 | $50.000 |
+Las variantes salen de las fotos: cada color que aparece en el inventario [`backend/database/seeders/data/product-images.csv`](../backend/database/seeders/data/product-images.csv) se convierte en una variante, y sus fotos quedan asociadas a ella. La organización de las imágenes está explicada en [`backend/database/seeders/images/README.md`](../backend/database/seeders/images/README.md).
 
+| Producto | Categoría | Variantes | Fotos | Precio |
+|---|---|---|---|---|
+| Hamaca con palo | Hamacas | 16 | 22 | $350.000 |
+| Hamaca clásica | Hamacas | 19 | 41 | $350.000 |
+| Silla colgante | Sillas colgantes | 16 | 32 | $300.000 (rayadas, colombiana y multicolor: $350.000) |
+| Columpio (para bebé) | Columpios | 5 | 8 | $350.000 |
+| Cuna colgante | Cunas | 8 | 9 | $250.000 |
+| Mochila tejida | Bolsos | 9 | 15 | $60.000 |
+| Bolso con flecos | Bolsos | 5 | 6 | $60.000 |
+| Bolso rayado | Bolsos | 1 | 8 | $60.000 |
+| Poncho | Ponchos | 1 | 4 | $50.000 |
+
+- Las fotos se copian al disco público de Laravel (`storage/app/public/products/`) y se sirven en `/storage/products/...`. Para eso hace falta ejecutar una vez `php artisan storage:link`.
 - Los precios salen de las páginas de categoría del sitio original.
 - Las descripciones son textos neutros para editar luego desde el panel.
 - El stock de demostración es de 5 unidades por variante.
