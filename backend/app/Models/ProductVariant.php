@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\StockAvailability;
 use Database\Factories\ProductVariantFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -66,5 +67,13 @@ class ProductVariant extends Model
     protected function effectivePrice(): Attribute
     {
         return Attribute::get(fn (): string => $this->price ?? $this->product->price);
+    }
+
+    /**
+     * @return Attribute<StockAvailability, never>
+     */
+    protected function availability(): Attribute
+    {
+        return Attribute::get(fn (): StockAvailability => StockAvailability::fromStock($this->stock));
     }
 }
