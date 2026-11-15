@@ -6,7 +6,7 @@ El objetivo es convertir aquel sitio en PHP tradicional en una base profesional 
 
 ## Estado actual
 
-**Fase 2 — backend.** Ya están el design system ([Fase 1](docs/design-system.md)) y el proyecto Laravel base con MySQL en Docker. El proyecto original se conserva como referencia en [`legacy/`](legacy/README.md).
+**Fase 3 — frontend.** Ya están el design system ([Fase 1](docs/design-system.md)), el backend con el catálogo y su API ([Fase 2](docs/api.md)) y el proyecto Angular base conectado a ella. Siguen las páginas de la tienda. El proyecto original se conserva como referencia en [`legacy/`](legacy/README.md).
 
 Para levantar el entorno, sigue la [guía de instalación](docs/installation.md).
 
@@ -24,10 +24,11 @@ Para levantar el entorno, sigue la [guía de instalación](docs/installation.md)
 ```
 /
 ├── backend/     API REST en Laravel
-├── frontend/    Aplicación Angular: tienda y panel admin (se crea en la Fase 3)
+├── frontend/    Aplicación Angular: tienda y, más adelante, panel admin
 ├── docs/        Documentación del proyecto, en español
 ├── legacy/      Proyecto original, solo como referencia (temporal)
 ├── compose.yaml Servicios de desarrollo (MySQL 8.4 en Docker)
+├── PRODUCT.md   Verdad del producto: usuarios, propósito, requisitos y compromisos de marca
 ├── .editorconfig
 ├── .gitattributes
 ├── .gitignore

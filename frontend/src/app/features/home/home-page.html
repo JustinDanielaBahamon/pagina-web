@@ -1,0 +1,23 @@
+<main class="setup">
+  <p class="brand">Hamacas de Tejidos Ortega</p>
+  <h1>La tienda está en construcción</h1>
+
+  @if (categories.isLoading()) {
+    <p class="status">Conectando con el catálogo…</p>
+  } @else if (categories.error()) {
+    <p class="status status--error" role="alert">
+      No se pudo conectar con la API. Revisa que Laravel esté corriendo en
+      <code>http://localhost:8000</code>.
+    </p>
+  } @else {
+    <p class="status">Conexión con el catálogo correcta:</p>
+    <ul class="categories">
+      @for (category of categories.value(); track category.id) {
+        <li>
+          {{ category.name }}
+          <span class="count tabular-nums">{{ category.products_count }}</span>
+        </li>
+      }
+    </ul>
+  }
+</main>

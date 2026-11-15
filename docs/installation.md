@@ -9,9 +9,9 @@ Guía para levantar el proyecto desde cero en Windows.
 | [Laravel Herd](https://herd.laravel.com/windows) | Última | Instala PHP 8.3+ y Composer |
 | [Docker Desktop](https://www.docker.com/products/docker-desktop/) | Última | Ejecuta MySQL en un contenedor |
 | [Git](https://git-scm.com/) | 2.x | Control de versiones |
-| [Node.js](https://nodejs.org/) | 24 LTS | Frontend Angular (Fase 3) |
+| [Node.js](https://nodejs.org/) | 26 LTS (mínimo 24.15) | Frontend Angular |
 
-Versiones con las que se probó: PHP 8.5.12, Composer 2.11.1, Laravel 13.42, MySQL 8.4.13 y Docker 29.8.
+Versiones con las que se probó: PHP 8.5.12, Composer 2.11.1, Laravel 13.42, MySQL 8.4.13, Docker 29.8, Node 26.13.1, npm 11.20 y Angular 22.2.
 
 Verifica en una terminal nueva:
 
@@ -19,6 +19,7 @@ Verifica en una terminal nueva:
 php -v
 composer -V
 docker --version
+node -v
 ```
 
 > XAMPP puede seguir instalado: el proyecto no lo usa. Como MySQL corre en el puerto **3307**, no choca con la MariaDB de XAMPP (3306). Si tu computador tiene poca RAM, apaga XAMPP mientras trabajas en este proyecto.
@@ -87,19 +88,40 @@ php artisan serve
 
 Abre http://localhost:8000/up: si muestra la página de estado, todo funciona.
 
-## 5. Pruebas
+## 5. Frontend (Angular)
+
+En otra terminal, con Laravel corriendo:
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+Abre http://localhost:4200. El servidor de desarrollo reenvía `/api` y `/storage` a Laravel (`proxy.conf.json`), así que el navegador ve todo como un solo sitio y no hace falta configurar CORS.
+
+Si la página dice que no se pudo conectar con la API, revisa que `php artisan serve` siga corriendo en el puerto 8000.
+
+## 6. Pruebas
 
 ```bash
 cd backend
 php artisan test
 ```
 
-Las pruebas usan SQLite en memoria (configurado en `phpunit.xml`). Así son rápidas y no tocan los datos de MySQL.
+Las pruebas del backend usan SQLite en memoria (configurado en `phpunit.xml`). Así son rápidas y no tocan los datos de MySQL.
+
+```bash
+cd frontend
+npm test
+npm run lint
+```
 
 ## Problemas comunes
 
 | Síntoma | Solución |
 |---|---|
+| `node -v` muestra una versión menor a 24.15 | Actualiza Node desde https://nodejs.org o con `winget upgrade OpenJS.NodeJS.LTS`, y abre una terminal nueva |
 | `php` o `composer` no se reconocen | Cierra y vuelve a abrir la terminal después de instalar Herd |
 | `SQLSTATE[HY000] [2002]` al migrar | MySQL no está encendido: abre Docker Desktop y ejecuta `docker compose up -d` |
 | `Access denied for user` | Las credenciales de `backend/.env` no coinciden con las de `compose.yaml` |

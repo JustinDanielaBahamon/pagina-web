@@ -154,10 +154,23 @@ Las sombras usan el tono `ink-900` en lugar de negro puro para mantener la calid
 
 ## 7. Movimiento
 
-- Duración: 150 ms en cambios pequeños (hover, foco) y 250 ms en elementos que entran (carrito lateral, menús).
-- Curva `cubic-bezier(0.2, 0, 0, 1)`, que arranca rápido y frena suave.
-- Solo se animan `opacity` y `transform`.
-- Con `prefers-reduced-motion: reduce` se eliminan los desplazamientos y quedan solo los cambios de opacidad.
+Antes de animar algo se responde, en orden: ¿se ve tantas veces que la animación estorbaría?, ¿para qué sirve?, ¿qué curva y qué duración? (método de *emil-design-eng*).
+
+| Token | Valor | Uso |
+|---|---|---|
+| `--ease-out` | `cubic-bezier(0.23, 1, 0.32, 1)` | Elementos que entran o salen: menús, toasts, tarjetas |
+| `--ease-in-out` | `cubic-bezier(0.77, 0, 0.175, 1)` | Elementos que se mueven dentro de la pantalla |
+| `--ease-drawer` | `cubic-bezier(0.32, 0.72, 0, 1)` | Carrito lateral y menú móvil |
+| `--duration-press` | 160 ms | Respuesta al presionar un botón (`scale(0.97)`) |
+| `--duration-fast` | 150 ms | Hover, foco, cambios de color |
+| `--duration-base` | 250 ms | Menús y paneles que entran |
+
+- Las animaciones de interfaz duran menos de 300 ms. Nunca se usa `ease-in`.
+- Las acciones con teclado no se animan.
+- Solo se animan `opacity` y `transform`, salvo efectos puntuales (`clip-path`, `filter`).
+- Nada aparece desde `scale(0)`: se parte de `scale(0.95)` con opacidad.
+- Los efectos de hover van dentro de `@media (hover: hover) and (pointer: fine)`, para que no se activen al tocar en el celular.
+- Con `prefers-reduced-motion: reduce` desaparecen los desplazamientos y se mantienen los cambios de opacidad y color.
 - Sin carruseles automáticos ni textos que cambien solos.
 
 ## 8. Componentes
@@ -233,6 +246,7 @@ Fondo blanco, filas de 48 px, separadores en `beige-300`, encabezado en `ink-600
 
 ## 11. Implementación y reutilización
 
-- Los tokens se definirán como variables CSS en un solo archivo del frontend (`frontend/src/styles/_tokens.scss`), en la Fase 3.
+- Los tokens están definidos como variables CSS en [`frontend/src/styles/_tokens.scss`](../frontend/src/styles/_tokens.scss), con los mismos nombres de este documento (`--color-wine-700`, `--space-4`, `--radius-md`…) y roles que los combinan (`--action-primary`, `--surface-page`).
+- La tipografía de títulos (`--font-display`) se elige en la ronda de diseño del inicio. Mientras tanto usa una serif del sistema.
 - Los componentes solo usarán esas variables, nunca valores sueltos.
 - **Para crear otra tienda** se cambian el nombre, el logo y los colores de marca (`wine-*` y `terracotta-*`) desde la configuración del negocio (`store_settings`). El resto del sistema se mantiene igual.
